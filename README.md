@@ -79,31 +79,118 @@ DO CHK THIS OUT-> <a>https://www.tpointtech.com/java-classes-and-objects</a>
 | Use Cases      | Local variables, static variables | Objects, dynamic arrays         |
 
 - **_C_**  
-malloc(), calloc()  
+malloc(), calloc()
+  - arr = (int*) malloc(5 * sizeof(int));       ( allocates a specified amount of memory but does not initialize the allocated memory (contains garbage values))  
+  - arr = (int*) calloc(5, sizeof(int));      (Contiguous Allocation. allocates memory for an array of elements and initializes them to zero.)  
+ 
 - **_C++:_**  
 Uses the **new** keyword to allocate memory on the heap and the **delete** keyword to free it.  
 - **_Java:_**  
 Uses the new keyword to allocate memory for objects on the heap.
+memory management is handled automatically by the JVM (Java Virtual Machine).
 
 ## 2. ACCESS SPECIFIERS
 - default (java)
 - public
 - private
-- protected  
-<a>https://www.tpointtech.com/access-modifiers-in-java</a>
+- protected   
+<a>https://www.tpointtech.com/access-modifiers-in-java</a>   
 
-## 3. Structure and Class
+### Access Modifiers
+
+| Access Modifier | Within Class | Within Package | Outside Package by Subclass Only | Outside Package |
+|-----------------|--------------|----------------|----------------------------------|-----------------|
+| **Private**     | Y            | N              | N                                | N               |
+| **Default**     | Y            | Y              | N                                | N               |
+| **Protected**   | Y            | Y              | Y                                | N               |
+| **Public**      | Y            | Y              | Y                                | Y               |
+
+
+- **Compile-time errors** occur during code compilation (before execution), often due to syntax or type mismatches, while **runtime errors** occur during program execution (after compilation), such as division by zero or accessing an out-of-bounds array.
+
+## 3. Member Functions  
+- In C++, member functions are functions that are part of a class and can operate on its data members.  
+- In Java, functions inside a class are called methods, but conceptually, they are the same as member functions in C++.  
+- **[Types of MEMBER FUNCTIONS IN C++]**
+  - (https://www.studytonight.com/cpp/types-of-member-function.php)
+  -   
+- Friend Functions is a reason, why C++ is not called as a pure Object Oriented language. Because it violates the concept of Encapsulation.  
+- Inside Class Function --> inline keyword  
+- Outside Class Function --> scope resolution operator (::) 
+
+## . Structure and Class
 <a>(https://www.geeksforgeeks.org/structure-vs-class-in-cpp/)</a>
 
 # 🚩 Constructor and Destructor   
-(chk rohit negi notes above for better theory)  
+(chk rohit negi notes above for better theory)
+- used to initialize the data members of new objects. 
 - special function with no return type 
-- automatically called
+- automatically called when object is created.
 - never be static
 - name same as of class
 
 ## Types : ##
 - DEFAULT
 - PARAMETRISED
-- COPY
+- COPY (Java does not have a built-in copy constructor like C++. Can be mannually implemented in java )
+
+## Destructor  
+<a> https://www.geeksforgeeks.org/destructors-c/</a>
+
+## Garbage Collector in java  
+GC runs automatically and identifies objects that are no longer referenced.
+Unreachable objects are deleted, and memory is reclaimed.  
+Explicitly triggered using System.gc() (not guaranteed to run immediately)
+
+## SHALLOW COPY V/S DEEP COPY  
+<a>https://www.tpointtech.com/shallow-copy-vs-deep-copy-in-java </a> (for java especially)    
+<!--> <a>https://www.geeksforgeeks.org/difference-between-shallow-and-deep-copy-of-a-class/</a> 
+ just asse hi when reading the article -(In Java, primitive data types are basic building blocks of data that store simple values directly in memory. They are not objects and are more efficient in terms of memory and performance.)  
+
+## Important Keywords
+<!--> will study later
+SNo | Topic | Link 
+----|-------|------
+1 | static | [view](https://www.youth4work.com/Talent/Core-Java/Forum/119567-wat-is-the-use-of-a-static-keyword)  
+2 | virtual | [view](https://www.codeproject.com/Questions/270054/why-virtual-keyword-is-used) 
+3 | abstract | [view](https://www.tutorialspoint.com/abstract-keyword-in-Java) 
+4 | final | [view](https://www.javatpoint.com/final-keyword) 
+5 | explicit | [view](https://www.geeksforgeeks.org/g-fact-93/) 
+6 | this | [view](https://www.javatpoint.com/this-keyword) 
+7 | new | [view](https://www.javatpoint.com/new-keyword-in-java) 
+8 | const | [view](https://stackoverflow.com/questions/7428358/why-const-keyword-is-not-used-in-java) 
+9 | super | [view](https://www.javatpoint.com/super-keyword)  
+
+# Features of OOPs :
+- Polymorphism
+- Inheritance
+- Encapsulation
+- Abstraction
+
+##   Inheritance  
+**java**- (extends keyword)  class derived extends base{...    
+**c++** - class Derived : public Base{ ...  
+_**Types :**_  
+- Single  
+- Mutliple (not in java (diamond problem), supported via interfaces )    
+- Hierarchical  
+- Multilevel  
+- Hybrid / Virtual (not in java, supported via interfaces)    
+  <a>https://www.tpointtech.com/inheritance-in-java</a> (java syntax and theory)    
+  <a>https://www.geeksforgeeks.org/inheritance-in-c/?ref=lbp</a> (c++ syntax)  
+
+**REAL LIFE EXAMPLE:**  Vehicle as the parent class and its different types (Car, Bike, Bus) as child classes.  
+### Key Concepts in Inheritance
+- **Code Reusability**  
+No need to rewrite `start()` in each child class.
+- **Parent-Child Relationship**  
+Car and Bike inherit properties from Vehicle.
+- **Method Overriding (Polymorphism)**  
+If needed, child classes can override parent methods.
+
+- While inheritance does NOT directly depend on encapsulation, encapsulation can control how inherited members are accessed using access modifiers (private, protected, public).  
+✅ Encapsulation helps restrict access to data in an inherited class  
+✅ Inheritance allows reusing code while encapsulation ensures data protection
+
+
 
