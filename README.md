@@ -140,7 +140,7 @@ memory management is handled automatically by the JVM (Java Virtual Machine).
 ## Garbage Collector in java  
 GC runs automatically and identifies objects that are no longer referenced.
 Unreachable objects are deleted, and memory is reclaimed.  
-Explicitly triggered using System.gc() (not guaranteed to run immediately)
+can Explicitly triggered using System.gc() (not guaranteed to run immediately)
 
 ## SHALLOW COPY V/S DEEP COPY  
 <a>https://www.tpointtech.com/shallow-copy-vs-deep-copy-in-java </a> (for java especially)    
@@ -172,7 +172,12 @@ SNo | Topic | Link
 **c++** - class Derived : public Base{ ...  
 _**Types :**_  
 - Single  
-- Mutliple (not in java (diamond problem), supported via interfaces )    
+- Mutliple
+   - (not in **java** (diamond problem), supported via interfaces ) (in **c++** , issue is resolved via virtual keyword)
+   -  Real-World Analogy:  
+      Imagine A is a Person, B is a Mother, C is a Father, and D is a Child.
+      Without virtual inheritance, the child may inherit two separate Person copies (one from mom, one from dad).  
+      With virtual inheritance, there's only one shared Person identity — no confusion    
 - Hierarchical  
 - Multilevel  
 - Hybrid / Virtual (not in java, supported via interfaces)    
@@ -180,11 +185,12 @@ _**Types :**_
   <a>https://www.geeksforgeeks.org/inheritance-in-c/?ref=lbp</a> (c++ syntax)  
 
 **REAL LIFE EXAMPLE:**  Vehicle as the parent class and its different types (Car, Bike, Bus) as child classes.  
-### Key Concepts in Inheritance
+### Key Concepts/Advantages of Inheritance
 - **Code Reusability**  
 No need to rewrite `start()` in each child class.
-- **Parent-Child Relationship**  
-Car and Bike inherit properties from Vehicle.
+- *Hierarchical Organization*
+- **Easier Maintenance**:
+  Changes made to a superclass automatically propagate to its subclasses, ensuring consistency and simplifying maintenance efforts
 - **Method Overriding (Polymorphism)**  
 If needed, child classes can override parent methods.
 
@@ -192,5 +198,18 @@ If needed, child classes can override parent methods.
 ✅ Encapsulation helps restrict access to data in an inherited class  
 ✅ Inheritance allows reusing code while encapsulation ensures data protection
 
+## Encapsulation 
+a process of wrapping code and data together into a single unit  
+facilitates data hiding in C++ by using  access specifiers  
 
+<a>https://www.tpointtech.com/encapsulation-in-java</a>
+<a>http://geeksforgeeks.org/encapsulation-in-cpp/?ref=lbp</a>   
+
+- we use **Access Specifiers** (especially c++)
+- in java we can also use **getter** and **setter** methods 
+*Real life example* : the phn is a capsule that is encapsulated (as explained in mock) , bank account (javatpoint)
+
+_**Advantages:**_ (gfg)  
+
+- Encapsulation also leads to abstraction
 
