@@ -202,14 +202,93 @@ If needed, child classes can override parent methods.
 a process of wrapping code and data together into a single unit  
 facilitates data hiding in C++ by using  access specifiers  
 
-<a>https://www.tpointtech.com/encapsulation-in-java</a>
-<a>http://geeksforgeeks.org/encapsulation-in-cpp/?ref=lbp</a>   
+<!--> <a>https://www.tpointtech.com/encapsulation-in-java</a>
+<a>http://geeksforgeeks.org/encapsulation-in-cpp/?ref=lbp</a>  
+<a>https://www.sitesbay.com/java/java-encapsulation</a>
 
 - we use **Access Specifiers** (especially c++)
 - in java we can also use **getter** and **setter** methods 
-*Real life example* : the phn is a capsule that is encapsulated (as explained in mock) , bank account (javatpoint)
+*Real life example* : the phn is a capsule that is encapsulated ([as explained in mock](https://stackoverflow.com/questions/12072980/encapsulation-vs-abstraction-real-world-example)) ,bank account (javatpoint)
+A bank application forbids (restrict) a client to change an Account's balance. 
 
 _**Advantages:**_ (gfg)  
 
 - Encapsulation also leads to abstraction
+- Encapsulation is the combination of Data hiding and Abstraction
 
+## Abstraction
+Data abstraction is a way of hiding the implementation details and showing only the functionality to the users.  
+- it shows only essential things to the user and hides the internal details.  
+**_Real Life example:_** 1) sending SMS where we type the text and send the message. We do not know the internal processing about the message delivery.  
+  2) bike , honda example (chk javatpoint with code.  
+  3) header files in c++        
+_How to achieve :_     
+1) C++  --> Access specifiers and header files  
+2) JAVA --> Interfaces and Abstract classes
+
+#### Example of Abstract Class in Java
+```java
+abstract class Bike {
+    abstract void run();  // abstract method
+}
+
+class Honda extends Bike {
+    void run() {
+        System.out.println("running safely");
+    }
+}
+```
+(bike class is with default access modifier 😊)   
+<a>https://www.tpointtech.com/abstract-class-in-java</a>  
+
+- Encapsulation is one way to achieve abstraction in object-oriented programming — especially in Java, C++, etc.
+- A method which is declared as abstract and does not have implementation is known as an abstract method.
+- Abstract classes **cannot be instantiated directly**.
+- ensures that subclasses provide necessary functionality.
+-  define a common interface for a group of related classes, ensuring consistency in their structure and behavior.  
+
+[Diff b/w encapsulation and abstraction](https://www.geeksforgeeks.org/difference-between-abstraction-and-encapsulation-in-c/?ref=lbp)
+
+## Interface in java 
+<a>https://www.tpointtech.com/interface-in-java/<a>
+
+#### Abstract Class vs Interface in Java
+
+Here’s a side-by-side table to help you quickly understand the differences:
+
+| Feature              | Abstract Class                                                                                          | Interface                                                                                      |
+|----------------------|---------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| **Keyword Used**     | `abstract class`                                                                                        | `interface`                                                                                    |
+| **Method Implementation** | Can have both abstract and non-abstract methods                                                   | Only abstract methods (until Java 7), From Java 8 onwards, can have default and static methods |
+| **Variables**        | Can have instance variables                                                                             | Only public static final (constants)                                                           |
+| **Constructor**      | Yes, can have constructors                                                                              | ❌ No constructors                                                                              |
+| **Inheritance Type** | Supports single inheritance                                                                             | Supports multiple inheritance (via multiple interfaces)                                        |
+| **Usage**            | When you want to share code (partial implementation)                                                    | When you just want to define method signatures                                                 |
+| **Access Modifiers** | Methods can be private, protected, etc.                                                                 | All methods are implicitly public abstract                                                     |
+| **Example**          | `abstract class Animal { void breathe(){}; abstract void sound(); }`                                    | `interface AnimalInterface { void breathe(); void sound(); }`                                   |
+
+
+## Polymorphism
+
+Bike obj = new Honda(); (as used in above example in javatpoint)  
+_What’s Happening Here?_  
+You're creating an object of the child class Honda, but referencing it using the parent class type Bike.  
+This is known as polymorphism — specifically, upcasting.  
+
+### Differences
+
+| Aspect                              | Java                                                                                                                                   | C++                                                                                      |
+|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| Polymorphism                        | <img src="https://github.com/user-attachments/assets/f33cf150-04d5-4efc-ac24-23c8ccc8b391" width="300">                                | <img src="https://github.com/user-attachments/assets/ce6cc5d6-10dd-40bb-b5a1-fe7038a6cf90" width="300"> |
+| More Info                           | [Polymorphism in Java](https://www.tpointtech.com/polymorphism-in-java)                                                                | [Polymorphism in C++](https://www.geeksforgeeks.org/cpp-polymorphism/?ref=lbp)           |
+| Operator Overloading                | Java does not have operator overloading                                                                                               | Supported                                                                                 |
+| Runtime Polymorphism                | `@override`                                                                                                                           | `virtual`                                                                                 |
+
+## OOPS Pillars Comparison Table (with Real-Life Remote Example)
+
+| Pillar        | Definition                                                   | Key Concept                  | Java Example                                             | Real-Life Example (Remote Control)                                                                 |
+|---------------|---------------------------------------------------------------|------------------------------|----------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| **Encapsulation** | Wrapping data & methods into a single unit (class); restrict direct access to data | Data hiding                  | `private int volume; public int getVolume()`              | Volume or battery level is hidden inside the remote, accessed via buttons (not directly touched)   |
+| **Abstraction**   | Hiding internal complexity, showing only relevant details to the user               | Hides how, shows what        | `abstract class Remote { abstract void powerOn(); }`     | You press the "Power" button, no need to know internal circuit working                             |
+| **Inheritance**   | One class acquires properties/methods of another                                     | Code reuse                   | `class TVRemote extends Remote`                           | A TV remote and AC remote share common features like powerOn, volumeUp — inherited from base Remote|
+| **Polymorphism**  | Same method behaves differently based on context                                     | Same name, many forms        | `Remote r = new TVRemote(); r.powerOn();`                 | powerOn() works differently for TV and AC remotes — one starts TV, the other turns on AC 
