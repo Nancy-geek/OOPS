@@ -1,7 +1,31 @@
 # OOPS 
 
-# Table of Contents  
-1. [🚩 Prodecural and OOPS paradigm](#prodecural-and-OOPS-paradigm-)
+# Table of Contents
+
+1. [🚩 Procedural and OOPS Paradigm](#prodecural-and-OOPS-paradigm)
+2. [🔍 Key Differences Between Java and C++ in OOP](#key-differences-between-java-and-c-in-oop)
+3. [🚩 Topics to Focus On](#topics-to-focus-on)
+   - [✅ Four Pillars of OOP](#-four-pillars-of-oop)
+   - [✅ Solid Understanding of OOP Principles](#solid-understanding-of-oop-principles)
+   - [Memory Management in OOP](#memory-management-in-oop)
+4. [🚩 Classes and Objects](#classes-and-objects)
+   - [Static vs Dynamic Memory Allocation](#static-vs-dynamic-memory-allocation)
+   - [Access Specifiers](#access-specifiers)
+   - [Member Functions](#member-functions)
+   - [Structure and Class](#structure-and-class)
+   - [Templates and Generics](#templates-and-generics)
+5. [🚩 Constructor and Destructor](#constructor-and-destructor)
+   - [Garbage Collector in Java](#garbage-collector-in-java)
+   - [JDK, JRE, and JVM in Java](#jdk-jre-and-jvm-in-java)
+   - [Shallow Copy vs Deep Copy](#shallow-copy-vs-deep-copy)
+6. [🚩 Important Keywords](#important-keywords)
+7. [🚩 Features of OOPs](#features-of-oops)
+   - [Inheritance](#inheritance)
+   - [Encapsulation](#encapsulation)
+   - [Abstraction](#abstraction)
+   - [Interface in Java](#interface-in-java)
+   - [Polymorphism](#polymorphism)
+8. [🚩 OOPS Pillars Comparison Table (with Real-Life Remote Example)](#oops-pillars-comparison-table-with-real-life-remote-example)
 
 
 # 🚩 Prodecural and OOPS paradigm 
@@ -197,7 +221,7 @@ can Explicitly triggered using System.gc() (not guaranteed to run immediately)
 <!--> <a>https://www.geeksforgeeks.org/difference-between-shallow-and-deep-copy-of-a-class/</a> 
  just asse hi when reading the article -(In Java, primitive data types are basic building blocks of data that store simple values directly in memory. They are not objects and are more efficient in terms of memory and performance.)  
 
-## Important Keywords
+## 🚩 Important Keywords
 <!--> will study later
 SNo | Topic | Link 
 ----|-------|------
@@ -211,7 +235,7 @@ SNo | Topic | Link
 8 | const | [view](https://stackoverflow.com/questions/7428358/why-const-keyword-is-not-used-in-java) 
 9 | super | [view](https://www.javatpoint.com/super-keyword)  
 
-# Features of OOPs :
+# 🚩 Features of OOPs :
 - Polymorphism
 - Inheritance
 - Encapsulation
@@ -334,7 +358,7 @@ This is known as polymorphism — specifically, upcasting.
 | Operator Overloading                | Java does not have operator overloading                                                                                               | Supported                                                                                 |
 | Runtime Polymorphism                | `@override`                                                                                                                           | `virtual`                                                                                 |
 
-## OOPS Pillars Comparison Table (with Real-Life Remote Example)
+## 🚩 OOPS Pillars Comparison Table (with Real-Life Remote Example)
 
 | Pillar        | Definition                                                   | Key Concept                  | Java Example                                             | Real-Life Example (Remote Control)                                                                 |
 |---------------|---------------------------------------------------------------|------------------------------|----------------------------------------------------------|----------------------------------------------------------------------------------------------------|
