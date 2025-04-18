@@ -1,5 +1,9 @@
 # OOPS 
 
+# Table of Contents  
+1. [🚩 Prodecural and OOPS paradigm](#prodecural-and-OOPS-paradigm-)
+
+
 # 🚩 Prodecural and OOPS paradigm 
 Procedural programming is about writing procedures or functions that perform operations on the data, while **object-oriented programming** is about creating objects that contain both data and functions.   
 [What is OOPS ? (and advantages)](https://www.w3schools.com/cpp/cpp_oop.asp)
@@ -118,8 +122,14 @@ memory management is handled automatically by the JVM (Java Virtual Machine).
 - Inside Class Function --> inline keyword  
 - Outside Class Function --> scope resolution operator (::) 
 
-## . Structure and Class
+### Structure and Class
 <a>(https://www.geeksforgeeks.org/structure-vs-class-in-cpp/)</a>
+
+### Templates and Generics  
+used to write the data type independent piece of code. The specified placeholder in the code gets replaced by the actual data type at the time of compilation, called the instantiation of code.  
+<a>https://www.geeksforgeeks.org/templates-in-c-vs-generics-in-java/</a>  
+ _**MACROS:**_
+  Macros are the segment of code that is replaced by the macro value. They are defined by #define directive. They are efficient because of inline compilation. There is no type checking in it.   
 
 # 🚩 Constructor and Destructor   
 (chk rohit negi notes above for better theory)
@@ -141,6 +151,46 @@ memory management is handled automatically by the JVM (Java Virtual Machine).
 GC runs automatically and identifies objects that are no longer referenced.
 Unreachable objects are deleted, and memory is reclaimed.  
 can Explicitly triggered using System.gc() (not guaranteed to run immediately)
+
+### JDK, JRE AND JVM IN JAVA
+```plaintext
+  +------------------------------------------------------------+
+  |                        Java Application                    |
+  +------------------------------------------------------------+
+                                |
+                                v
+                       +--------------------+
+                       |   Java Compiler    |
+                       +--------------------+
+                                |
+                                v
+                       [Bytecode (.class)]
+                                |
+                                v
+  +------------------------------------------------------------+
+  |               Java Runtime Environment (JRE)               |
+  |                                                            |
+  |   +----------------------------------------------------+   |
+  |   |             Java Virtual Machine (JVM)             |   |
+  |   |                                                    |   |
+  |   |   +--------------------------+   +---------------+ |   |
+  |   |   |      Class Loader        |   |  Garbage      | |   |
+  |   |   |                          |   |  Collector    | |   |
+  |   |   +--------------------------+   +---------------+ |   |
+  |   |                                                    |   |
+  |   |   +------------------------------+                 |   |
+  |   |   |   Memory Area (Heap/Stack)   |                 |   |
+  |   |   +------------------------------+                 |   |
+  |   |                                                    |   |
+  |   |   +------------------------------+                 |   |
+  |   |   |       Execution Engine       |                 |   |
+  |   |   |   Includes:                  |                 |   |
+  |   |   |   - Interpreter              |                 |   |
+  |   |   |   - JIT Compiler             |                 |   |
+  |   |   +------------------------------+                 |   |
+  |   +----------------------------------------------------+   |
+  +------------------------------------------------------------+
+```
 
 ## SHALLOW COPY V/S DEEP COPY  
 <a>https://www.tpointtech.com/shallow-copy-vs-deep-copy-in-java </a> (for java especially)    
