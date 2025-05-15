@@ -137,14 +137,17 @@ memory management is handled automatically by the JVM (Java Virtual Machine).
 - **Compile-time errors** occur during code compilation (before execution), often due to syntax or type mismatches, while **runtime errors** occur during program execution (after compilation), such as division by zero or accessing an out-of-bounds array.
 
 ## 3. Member Functions  
-- In C++, member functions are functions that are part of a class and can operate on its data members.  
-- In Java, functions inside a class are called methods, but conceptually, they are the same as member functions in C++.  
+- In C++, member functions are functions that are part of a class and can operate on its data members.  (Pass by Reference)
+- In Java, functions inside a class are called methods, but conceptually, they are the same as member functions in C++.  (Pass by Value)
 - **[Types of MEMBER FUNCTIONS IN C++]**
   - (https://www.studytonight.com/cpp/types-of-member-function.php)
   -   
 - Friend Functions is a reason, why C++ is not called as a pure Object Oriented language. Because it violates the concept of Encapsulation.  
 - Inside Class Function --> inline keyword  
-- Outside Class Function --> scope resolution operator (::) 
+- Outside Class Function --> scope resolution operator (::)
+  
+- (**For JAVA** - When an array is passed as an argument to a method in Java, a copy of the array's reference (memory address) is passed, not a copy of the array itself. This means that while the method receives a copy of the reference, both the original array and the method's parameter refer to the same array in memory. Consequently, modifications made to the array elements within the method will directly affect the original array) 
+
 
 ### Structure and Class
 <a>(https://www.geeksforgeeks.org/structure-vs-class-in-cpp/)</a>
