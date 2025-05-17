@@ -352,6 +352,50 @@ _What’s Happening Here?_
 You're creating an object of the child class Honda, but referencing it using the parent class type Bike.  
 This is known as polymorphism — specifically, upcasting.  
 
+## Example Code
+
+```java
+class Bike {
+    void run() {
+        System.out.println("Bike is running");
+    }
+}
+
+class Splendor extends Bike {
+    void run() {
+        System.out.println("Splendor runs at 60km/hr");
+    }
+}
+
+class Bullet extends Bike {
+    void run() {
+        System.out.println("Bullet runs at 80km/hr");
+    }
+}
+
+class Test {
+    void startBike(Bike b) {
+        b.run();  // This will call the appropriate run() method based on the actual object
+    }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.startBike(new Splendor());
+        t.startBike(new Bullet());
+    }
+}
+```
+
+## Output
+
+```
+Splendor runs at 60km/hr
+Bullet runs at 80km/hr
+```
+
+✅ You don’t need to change the code if you add more Bike types later.  
+Let’s say you’re building a game or app. You define this method test. Now you can define many types of bikes without changing the main logic.
+
 ### Differences
 
 | Aspect                              | Java                                                                                                                                   | C++                                                                                      |
@@ -360,6 +404,8 @@ This is known as polymorphism — specifically, upcasting.
 | More Info                           | [Polymorphism in Java](https://www.tpointtech.com/polymorphism-in-java)                                                                | [Polymorphism in C++](https://www.geeksforgeeks.org/cpp-polymorphism/?ref=lbp)           |
 | Operator Overloading                | Java does not have operator overloading                                                                                               | Supported                                                                                 |
 | Runtime Polymorphism                | `@override`                                                                                                                           | `virtual`                                                                                 |
+
+
 
 ## 🚩 OOPS Pillars Comparison Table (with Real-Life Remote Example)
 
