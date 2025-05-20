@@ -331,6 +331,8 @@ class Honda extends Bike {
 
 #### Abstract Class vs Interface in Java
 
+- objects can't be created for abstract and interface class  
+
 Here’s a side-by-side table to help you quickly understand the differences:
 
 | Feature              | Abstract Class                                                                                          | Interface                                                                                      |
