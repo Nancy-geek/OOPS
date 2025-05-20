@@ -331,7 +331,8 @@ class Honda extends Bike {
 
 #### Abstract Class vs Interface in Java
 
-- objects can't be created for abstract and interface class  
+- objects can't be created for abstract and interface class
+- If your class is not abstract, you must override all abstract methods of the interface.
 
 Here’s a side-by-side table to help you quickly understand the differences:
 
@@ -407,6 +408,37 @@ Let’s say you’re building a game or app. You define this method test. Now yo
 | Operator Overloading                | Java does not have operator overloading                                                                                               | Supported                                                                                 |
 | Runtime Polymorphism                | `@override`                                                                                                                           | `virtual`                                                                                 |
 
+
+## For Example (in JAVA real implementation):
+
+```java
+Queue<Integer> q = new ArrayDeque<>();
+```
+
+### How Polymorphism Works Here
+
+- **`Queue` is an interface** — this is the reference type.
+- **`ArrayDeque` is a concrete class** that implements the `Queue` interface — this is the object type.
+
+**In other words:**  
+You’re using the interface type (`Queue`) to refer to an object of a class (`ArrayDeque`).  
+This is **runtime polymorphism**, a key concept in Object-Oriented Programming (OOP).
+
+### Why Is This Useful?
+
+You can easily swap out implementations later without changing much code. For example:
+
+```java
+Queue<Integer> q = new LinkedList<>();
+// or
+Queue<Integer> q = new PriorityQueue<>();
+```
+
+You can use the same `Queue` interface methods (`offer`, `poll`, `peek`, etc.) no matter what underlying class you're using.  
+**That’s polymorphism in action!**
+
+
+---
 
 
 ## 🚩 OOPS Pillars Comparison Table (with Real-Life Remote Example)
