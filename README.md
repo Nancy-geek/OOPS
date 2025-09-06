@@ -247,6 +247,7 @@ SNo | Topic | Link
 ##   Inheritance  
 **java**- (extends keyword)  class derived extends base{...    
 **c++** - class Derived : public Base{ ...  
+[For theoritically - Do check different behaviours which other access modifiers written when inheriting the [parent class].  
 _**Types :**_  
 - Single  
 - Mutliple
@@ -262,6 +263,7 @@ _**Types :**_
   <a>https://www.geeksforgeeks.org/inheritance-in-c/?ref=lbp</a> (c++ syntax)  
 
 **REAL LIFE EXAMPLE:**  Vehicle as the parent class and its different types (Car, Bike, Bus) as child classes.  
+Car can have 2 child classes as mannual and electric car.  
 ### Key Concepts/Advantages of Inheritance
 - **Code Reusability**  
 No need to rewrite `start()` in each child class.
@@ -277,7 +279,8 @@ If needed, child classes can override parent methods.
 
 ## Encapsulation 
 a process of wrapping code and data together into a single unit  
-facilitates data hiding in C++ by using  access specifiers  
+facilitates data hiding in C++ by using  access specifiers   
+**Key aspect**: Data Security (For eg- one cannot change the odometer calculation and data in a car though we can have accelerate() and break())   
 
 <!--> <a>https://www.tpointtech.com/encapsulation-in-java</a>
 <a>http://geeksforgeeks.org/encapsulation-in-cpp/?ref=lbp</a>  
@@ -291,7 +294,7 @@ A bank application forbids (restrict) a client to change an Account's balance.
 _**Advantages:**_ (gfg)  
 
 - Encapsulation also leads to abstraction
-- Encapsulation is the combination of Data hiding and Abstraction
+- Encapsulation is the combination of Data security and Abstraction
 
 ## Abstraction
 Data abstraction is a way of hiding the implementation details and showing only the functionality to the users.  
@@ -349,7 +352,19 @@ Here’s a side-by-side table to help you quickly understand the differences:
 
 
 ## Polymorphism
+Simple meaning- Many forms  
 
+```plaintext
+        Animal (run) 
+          |
+  --------------------
+  |       |           |
+Duck    Human(run)    Tiger
+           |
+   ------------------- (peform different on different parameter aspect)
+   |               |
+SlowRunning   FastRunning
+```  
 Bike obj = new Honda(); (as used in above example in javatpoint)  
 _What’s Happening Here?_  
 You're creating an object of the child class Honda, but referencing it using the parent class type Bike.  
@@ -408,6 +423,8 @@ Let’s say you’re building a game or app. You define this method test. Now yo
 | Operator Overloading                | Java does not have operator overloading                                                                                               | Supported                                                                                 |
 | Runtime Polymorphism                | `@override`                                                                                                                           | `virtual`                                                                                 |
 
+Dynamic polymorphism - method overridding  
+Static polymorphism - method overloading  
 
 ## For Example (in JAVA real implementation):
 
